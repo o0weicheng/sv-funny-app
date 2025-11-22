@@ -3,6 +3,18 @@
 
 	let point = $state([9999, 9999])
 
+	const disableTracing = (rect: DOMRect): boolean => {
+		const [x, y] = point;
+		const {left, top, right, bottom, width, height} = rect
+
+		return (
+			(x <= left - width / 2) ||
+			(x >= right + width / 2) ||
+			(y <= top - height / 2) ||
+			(y >= bottom + height / 2)
+		)
+	}
+
 	const container = (element: HTMLElement) => {
 		const handlePointerMove = (event: PointerEvent) => {
 			const x = event.clientX;
@@ -19,6 +31,8 @@
 	const card = (element: HTMLElement) => {
 		const [pointX, pointY] = point;
 		const rect = element.getBoundingClientRect();
+
+		if(disableTracing(rect)) return
 		const x = pointX - rect.left - (rect.width / 2);
 		const y = pointY - rect.top - (rect.height / 2);
 
