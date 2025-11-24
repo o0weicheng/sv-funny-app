@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-	<meta title="追踪光线" />
+	<title>追踪光线</title>
 </svelte:head>
 
 <div {@attach container} class="p-4 w-full bg-black grid grid-flow-row gap-4 grid-cols-3">

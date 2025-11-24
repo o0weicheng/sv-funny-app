@@ -205,13 +205,13 @@
 
 <div {@attach droppable({items: ns})} class="grid grid-cols-4 gap-4 p-2">
 	{#each ns as item (item)}
-		<Card.Root class="cursor-move-pointer">
-			<Card.Header>
-				<Card.Title>Card Title</Card.Title>
-			</Card.Header>
-			<Card.Content>
-				<span class="text-2xl">item: {item}</span>
-			</Card.Content>
-		</Card.Root>
+			<Card.Root class="cursor-move-pointer">
+				<Card.Header>
+					<Card.Title>Card Title</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<span class="text-2xl">item: {item}</span>
+				</Card.Content>
+			</Card.Root>
 	{/each}
 </div>

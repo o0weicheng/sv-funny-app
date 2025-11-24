@@ -122,3 +122,45 @@
         @apply cursor-pointer;
     }
 }
+
+@theme {
+    --animate-white: white 2s infinite;
+    --animate-black: black 2s infinite;
+
+    @keyframes white {
+        0%, 100% {
+            transform: translate3d(0, 0%, 0);
+            animation-timing-function: ease-in;
+        }
+        25%{
+            transform: translate3d(0, 100%, 20px);
+            animation-timing-function: ease-out;
+        }
+        50%{
+            transform: translate3d(0, 200%, 0);
+            animation-timing-function: ease-in;
+        }
+        75%{
+            transform: translate3d(0, 100%, -20px);
+            animation-timing-function: ease-out;
+        }
+    }
+    @keyframes black {
+        0%,100% {
+            animation-timing-function: ease-in;
+            transform: translate3d(0, 0%, 0);
+        }
+        25%{
+            transform: translate3d(0, -100%, -20px);
+            animation-timing-function: ease-out;
+        }
+        50%{
+            transform: translate3d(0, -200%, 0);
+            animation-timing-function: ease-in;
+        }
+        75%{
+            transform: translate3d(0, -100%, 20px);
+            animation-timing-function: ease-out;
+        }
+    }
+}
